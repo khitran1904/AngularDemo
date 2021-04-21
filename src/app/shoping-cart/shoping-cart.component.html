@@ -1,0 +1,9 @@
+<h3 class="text-center">SHOPPING</h3>
+<div class="container" >
+    <div class="row">
+            <app-product-list class="col-sm-8" (onSelect)="handleSelect($event)"></app-product-list>
+            <app-cart class="col-sm-4" #cart></app-cart>
+            
+    </div>
+    <button class="btn btn-success" >Giảm 10%</button>
+</div>

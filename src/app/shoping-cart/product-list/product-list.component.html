@@ -1,0 +1,10 @@
+<h3 class="text-center text-danger my-4">Danh sách sản phẩm</h3>
+
+<div class="row">
+    <div *ngFor="let product of listProduct" class="col-sm-3">
+        <app-product-item [product]="product" 
+                        (onSelect)="onSelect.emit($event)">
+        </app-product-item>
+    </div>
+</div>
+<!-- (onSelect)="handleSelect($event)" -->

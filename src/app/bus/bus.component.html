@@ -1,0 +1,12 @@
+<h4 class="text-center">Bài tập Bus</h4>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6">
+            <app-list-seat #listSeat (onSelect)="handleSelect($event)"  ></app-list-seat>
+        </div>
+        <div class="col-sm-6">
+            <app-list-seat-selected #listSeatSelected  (onRemove)="handlerRemove($event)" ></app-list-seat-selected>
+        </div>
+    </div>
+</div>

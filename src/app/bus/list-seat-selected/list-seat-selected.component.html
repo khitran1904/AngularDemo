@@ -1,0 +1,15 @@
+<h3>Danh sách ghế đang chọn : 
+    <span *ngIf="listSeat.length"> 
+        {{listSeat.length}} 
+    </span>
+</h3>
+
+<p *ngFor="let seat of listSeat" >
+    <span>
+        Ghế : {{seat.name}} - Giá : {{seat.price}}
+    </span>
+    <span class="text-danger btn" 
+            (click)="handlerRemove(seat.id)">
+        [Hủy]
+    </span>
+</p>

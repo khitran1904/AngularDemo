@@ -1,0 +1,65 @@
+<!-- thẻ p chỉ hiển thị tkhi isActive = true -->
+<!-- directives có dấu * đằng  trước thì tự động nhận vế bên phải là biến -->
+<p *ngIf="isActive" >Hello cục bẹp tủn</p>
+<button (click)="isActive = !isActive" class="btn-success">Toggle</button>
+<hr><hr>
+<!-- View thị khi đã đăng nhập -->
+<div *ngIf="isLogin; else LoginTemplate " >
+    <h4>Đẫ đăng nhập Thành công</h4>
+    <button (click)="isLogin=false" >Đăng xuất</button>
+</div>
+<!-- View thị khi chưa đăng nhập
+<div *ngIf="!isLogin">
+    <h4>Mời đăng nhập</h4>
+    <button (click)="isLogin=true">Đăng nhập</button>
+</div> -->
+
+<!-- ng-Temlate : mặc địng nội dung trong ng-template sẽ không đk hiển thị ra giao diện, nội dung này đk hiển thị khi ta gọi đến tham chiếu cua ng-template -->
+<ng-template #LoginTemplate >
+    <div>
+        <h4>Mời đăng nhập</h4>
+        <button (click)="isLogin=true">Đăng nhập</button>
+    </div> 
+</ng-template>
+
+<div [ngSwitch]="color" >
+    <p *ngSwitchCase="'primary'" class="bg-primary" >King in the north</p>
+    <p *ngSwitchCase="'success'" class="bg-success" >King in the north</p>
+    <p *ngSwitchCase="'warning'" class="bg-warning" >King in the north</p>
+    <p *ngSwitchCase="'danger'" class="bg-danger" >King in the north</p>
+    <p *ngSwitchCase>Default</p>
+</div>
+
+<select [(ngModel)]="color">
+    <option value="">Default</option>
+    <option value="primary">primary</option>
+    <option value="success">success</option>
+    <option value="warning">warning</option>
+    <option value="danger">danger</option>
+</select>
+
+<!-- ngFor -->
+<!--  Biến count và index là do angular cung cấp -->
+<!-- count đếm số phần tử , index là chỉ số -->
+<!-- ng-container : không hiển thị ra giao diện mà chỉ hiện thị nội dung -->
+<hr><hr>
+<ng-container *ngIf="movieList">
+    <p  *ngFor="let movie of movieList; let idx=index; let total1 = count; count as total">
+        {{idx+1}}/{{total1}} - {{movie.name}} - {{movie.price}}
+    </p>
+</ng-container>
+
+
+<!-- ngTemplateOutlet -->
+<ng-template #alertTemplate>
+    <div class="alert alert-danger">
+        <span>Cảnh báo</span>
+    </div>
+</ng-template>
+
+<ng-container *ngTemplateOutlet="alertTemplate">
+</ng-container>
+<ng-container *ngTemplateOutlet="alertTemplate">
+</ng-container>
+<ng-container *ngTemplateOutlet="alertTemplate">
+</ng-container>

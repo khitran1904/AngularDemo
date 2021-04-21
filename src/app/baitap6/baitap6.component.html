@@ -1,0 +1,45 @@
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            Quản lí danh mục
+        </div>
+        <div class="card-body">
+            <div class="form-group">
+                <label for="">Mã sản phẩm</label>
+                <input class="form-control" [(ngModel)]="form.id">
+            </div>
+            <div class="form-group">
+                <label for="">Tên sản phẩm</label>
+                <input class="form-control" [(ngModel)]="form.name">
+            </div>
+            <div class="form-group">
+                <label for="">Giá sản phẩm</label>
+                <input class="form-control" [(ngModel)]="form.gia">
+            </div>
+        </div>
+        <div class=" card-footer text-muted">
+                <button class="btn btn-success" (click)="addProduct()"  >Thêm sản phẩm</button>
+            </div>
+        </div>
+    </div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Mã Sản Phẩm</th>
+            <th>Tên Sản Phẩm</th>
+            <th>Giá Sản Phẩm</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let product of productList; let idx=index; let isOdd=odd; let iEven=even"
+            [class]="{'bg-secondary':isOdd}">
+
+            <td scope="row">{{idx+1}}</td>
+            <td>{{product.id}}</td>
+            <td>{{product.name}}</td>
+            <td>{{product.gia}}</td>
+        </tr>
+        
+    </tbody>
+</table>

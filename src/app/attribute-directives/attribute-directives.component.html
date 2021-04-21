@@ -1,0 +1,36 @@
+<!-- ngClass -->
+
+<!-- Thẻ p có class là bg-primary khi biến isActive=true -->
+<p class="text-center"
+    [class]="{'bg-primary':isActive,'text-black':isActive}">
+    Call me King
+</p>
+
+<button (click)="isActive=!isActive" >Change</button>
+<hr>
+
+<!-- ngStyle -->
+
+<p class="text-center"
+    [style]="{'background-color':color}">
+    Demo Style
+</p>
+
+<div style="height: 500px; background-repeat: no-repeat;"
+    [style]="{
+        'background-image':'url('+imgUrl+')'
+    }"
+    >
+    ss
+</div>
+
+<!-- ngNonBindable -->
+<p ngNonBindable >
+    {{bienGoDo}}
+</p>
+
+
+<!-- innerHTML   -->
+<div [innerHTML]="template" >
+
+</div>

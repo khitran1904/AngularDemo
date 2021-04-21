@@ -1,0 +1,8 @@
+<div class="card text-left">
+  <img class="card-img-top" src={{product.img}} height="150px" alt="">
+  <div class="card-body text-center">
+    <h4 class="card-title">{{product.name}}</h4>
+    <p class="card-text">{{product.price}}</p>
+    <button class="btn btn-success mx-2" (click)="onSelect.emit(product)" >Thêm</button>
+  </div>
+</div>

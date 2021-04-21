@@ -1,0 +1,44 @@
+<p>data-binding works!</p>
+
+<!-- interpolation -->
+{{message}}
+{{student.name}}
+
+
+<!-- Property binding -->
+<input [value]="message" [disabled]="!isActive">
+
+<!-- Event Binding  - Thay đổi dữ liệu trong component -->
+<button (click)="changeMessage()" >Click</button>
+<br><br>
+
+<!-- Để nhận đk đối tượng event phải thêm biến truyền vào $event -->
+<!--  sự kiện change và input -->
+<p>{{userName}}</p>
+<input [value]="userName" 
+    (change)="changeUserName($event)">
+<br><br>
+<input [value]="userName" 
+    (input)="changeUserName($event)">
+
+<!-- Lây giá trị của 1 thẻ  đặt tham chiếu #emailRef rồi truyền vào hàm -->
+<p>{{email}}</p>
+<input [value]="email" id="email" #emailRef>  <br>
+<button class="btn btn-success"
+    (click)="changeEmail(emailRef)" >
+    Change Email
+</button>
+
+<!-- Two way binding -- hàm input và gán trong 1 bước tiện lợi -->
+<br><br>
+<p>{{address}}</p>
+<input type="text" [value]="address" (input)="changeAddress($event)" >
+<!-- 2 cái tương đương nhau -->
+<input [(ngModel)]="address">
+<br><br>
+<p>{{district}}</p>
+<select [(ngModel)]="district">
+    <option value="">---</option>
+    <option value="Hà Nội">Hà Nội</option>
+    <option value="TP. HCM">TP. HCM</option>
+</select>

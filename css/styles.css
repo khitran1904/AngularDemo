@@ -1,0 +1,11 @@
+/* You can add global styles to this file, and also import other style files */
+.title {
+  color: green;
+}
+
+.header {
+  width: 100%;
+  height: 100px;
+  background-color: #c92525;
+}
+/*# sourceMappingURL=styles.css.map */

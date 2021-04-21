@@ -1,0 +1,9 @@
+
+<div class="card text-left">
+  <img class="card-img-top" height="300px" [src]="movie.img" alt="">
+  <div class="card-body">
+    <h4 class="card-title">{{movie.name}}</h4>
+    <p class="card-text">{{movie.price}}</p>
+    <button class="btn btn-danger" (click)="handleDeleteMovie()" >Delete</button>
+  </div>
+</div>

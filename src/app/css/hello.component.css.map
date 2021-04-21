@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,MAAM,CAAA;EACF,KAAK,EAAE,IAAI;CACd",
+    "sources": [
+        "../hello/hello.component.scss"
+    ],
+    "names": [],
+    "file": "hello.component.css"
+}

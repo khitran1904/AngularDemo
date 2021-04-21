@@ -1,0 +1,7 @@
+<div class="row" >
+    <div *ngFor="let movie of movieList" class="col-sm-4" >
+        <app-movie-item  
+            (onDelete)="handleDeleteMovie($event)"
+            [movie]="movie" ></app-movie-item>
+    </div>
+</div>

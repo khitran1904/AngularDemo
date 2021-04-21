@@ -1,0 +1,9 @@
+
+<div class="bg-secondary text-center">
+    <span>Tài xế</span>
+</div>
+<div class="row">
+    <div *ngFor="let seat of listSeat" class="col-sm-3">
+        <app-seat [seat]="seat" #seat (onSelect)="handleSelect($event)" ></app-seat>
+    </div>
+</div>

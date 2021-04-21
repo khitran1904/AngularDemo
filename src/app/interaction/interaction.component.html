@@ -1,0 +1,14 @@
+<h1 class="text-center">
+    Interaction Movie
+</h1>
+
+<div class="container" >
+    <app-add-movie (onAdd)="handleAddMovie($event)" ></app-add-movie>
+    <!-- Cách 1: truyền input -->
+    <!-- <app-movie-list [newMovie]="newMovie" ></app-movie-list> -->
+
+    <!-- Cách 2: viewChild -->
+    <!-- Đặt cho component con 1 Ref để có thể viewChild tới -->
+    <app-movie-list #movieList ></app-movie-list>
+    
+</div>

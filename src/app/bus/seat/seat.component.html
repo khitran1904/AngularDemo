@@ -1,0 +1,10 @@
+<button class="seat btn btn-secondary"
+        [class]="{
+            'bg-danger':seat.isActive,
+            'bg-success':isSelect
+        }"
+        [disabled]="seat.isActive"
+        (click)="handleSelect()"
+        >
+    {{seat.name}}
+</button>
